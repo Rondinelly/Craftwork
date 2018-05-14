@@ -43,3 +43,11 @@ process.stdin
 // TWO
 // three
 // FOUR
+
+// Buffer the text and reverse it using the `concat-stream` module before writing it to stdout.
+const concat = require('concat-stream');
+  
+process.stdin.pipe(concat(function (src) {
+    var s = src.toString().split('').reverse().join('');
+    console.log(s);
+}));
