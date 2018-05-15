@@ -19,3 +19,13 @@ const server = http.createServer(function (req, res) {
 });
 
 server.listen(parseInt(3001));
+
+//send an HTTP POST request to http://localhost:8099 and pipe process.stdin into it. 
+const request = require('request');
+let r = request.post('http://localhost:8099');
+process.stdin.pipe(r).pipe(process.stdout);
+
+//websocket-stream module to print the string "hello\n".
+const ws = require('websocket-stream');
+let stream = ws('ws://localhost:8099');
+stream.write('hello\n');
