@@ -29,3 +29,18 @@ process.stdin.pipe(r).pipe(process.stdout);
 const ws = require('websocket-stream');
 let stream = ws('ws://localhost:8099');
 stream.write('hello\n');
+
+//html written to stdin
+const trumpet = require('trumpet');
+const through = require('through2');
+const tr = trumpet();
+
+var loud = tr.select('.loud').createStream();
+
+loud.pipe(through(function (buf, _, next) {
+	this.push(buf.toString().toUpperCase());
+	next();
+})).pipe(loud);
+
+process.stdin.pipe(tr).pipe(process.stdout);
+
