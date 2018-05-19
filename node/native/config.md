@@ -1,6 +1,6 @@
 # Links
 
-## Compilador gcc (C++)
+## Compiler gcc (C++)
 
 https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15#
 
