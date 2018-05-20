@@ -28,7 +28,7 @@ jshint --config .jshintrc <filename.js>
 npm -g i eslint
 ```
 
-## Config file for `.eslint`
+## Config file for `eslint`
 
 ```json
 {
