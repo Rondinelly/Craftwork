@@ -41,7 +41,7 @@ npm -g i eslint
 }
 ```
 
-* Put it in a file named **eslintrc**
+* Put it in a file named **.eslintrc**
 
 ## Run `eslint` with
 
