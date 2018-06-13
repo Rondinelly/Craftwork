@@ -1,1 +1,1 @@
-setTimeout(() => (console.log("TIME OUT!")), 5000000);
+setTimeout(() => (console.log("TIME OUT!")), 300);
