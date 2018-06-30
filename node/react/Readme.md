@@ -1,6 +1,6 @@
 # Think in React
 
- One such technique is the single responsibility principle, that is, a component should ideally only do one thing.
+ One of their technique is the single responsibility principle, that is, a component should ideally only do one thing.
   * If it ends up growing it should be decomposed into smaller subcomponents.
   
 ## Static version 
