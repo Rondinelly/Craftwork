@@ -6,6 +6,12 @@ function* generatorFn() {...}
 
 Ao contrário de uma function normal, function generator retorna vários valores um por um.
 
+Uma expressão também pode ser um generator
+
+```js
+yield *foo(); // delegate foo
+```
+
 ## Expressão `yield`
 
 Pausa o generator e retorna um objeto `Iterator`, que contém duas propriedades que são: `value` e `done`
