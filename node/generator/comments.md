@@ -12,6 +12,8 @@ Uma expressão também pode ser um generator
 yield *foo(); // delegate foo
 ```
 
+* O código dentro de uma function generator sempre será síncrono, mesmo se iterarmos os generators de forma assíncrona.
+
 ## Expressão `yield`
 
 Pausa o generator e retorna um objeto `Iterator`, que contém duas propriedades que são: `value` e `done`
