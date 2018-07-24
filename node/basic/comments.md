@@ -47,3 +47,9 @@ Faz a leitura do diretório (`path`).
 ## `path.extname(path)`
 
 Retorna a extensão do arquivo do caminho(path) selecionado.
+
+## `module.exports`
+
+A palavra-chave `require` retorna um objeto, que faz referência ao valor `module.exports` de um determinado arquivo.
+Cada módulo também é privado(acessível apenas a partir do código do módulo). O Node.js internamente envolve todos os módulos `require` em um wrapper. 
+
