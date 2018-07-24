@@ -1,14 +1,14 @@
-# `process.argv`
+## `process.argv`
 
 A propriedade `process.argv` retorna uma matriz de strings contendo os argumentos de um CLI transmitido quando o processo NODE foi iniciado;
 O primeiro elemento do array `process.argv` é sempre "node" e o segundo elemento é sempre o caminho do arquivo executado, do terceiro em diante 
 são passados os argumentos `(process.argv[2])`;
 
-# `readFileSync(path[, options])`
+## `fs.readFileSync(path[, options])`
 
 Faz a leitura de um arquivo de forma síncrona;
 
-# `readFile(path[, options], callback)`
+## `fs.readFile(path[, options], callback)`
 
 Faz a leitura de um arquivo de forma assíncrona; o callback tem dois argumentos: `(err, data)`, no qual data é o conteúdo do arquivo.
 
@@ -36,3 +36,14 @@ O  método `forEach()` usa uma function como argumento. A função consiste em t
 - `currentValue` mantém o valor presente sendo processado. 
 - a variável `index` mantém o índice do valor nessa matriz específica. 
 - a variável `array` mantém o array total passado.
+
+## `fs.readdir(path[, options], callback)`
+
+Faz a leitura do diretório (`path`).
+
+- `options`(opcional) para indicar o enconding do arquivo.
+- `callback` contém `err`, `files` é a lista com o nome dos arquivos do diretório.
+
+## `path.extname(path)`
+
+Retorna a extensão do arquivo do caminho(path) selecionado.
