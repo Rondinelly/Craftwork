@@ -9,7 +9,7 @@ fs.readdir(folder, function (err, list) {
 	   return console.log(err);
 
 	list.forEach(function (file) {
-	  if (path.extname(file) === ext){
+	  if (path.extname(file) === extension){
 		console.log(file);
 	}
       })
