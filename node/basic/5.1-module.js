@@ -1,8 +1,8 @@
 const filterFn = require("./5.2-module.js")
 const dir = "";
-const filterStr = "";
+const extension = "";
 
-filterFn(dir, filterStr, function (err, list) {
+filterFn(dir, extension, function (err, list) {
   if (err) {
     return console.log(err);
   }
