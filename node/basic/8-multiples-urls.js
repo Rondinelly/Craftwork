@@ -2,6 +2,7 @@ const http = require("http");
 const bl = require("bl");
 const results = [];
 let count = 0;
+const urls = ["http://nodejs.org/dist/index.json", "http://nodejs.org/dist/index.json", "http://nodejs.org/dist/index.json"];
 
 function printResults () {
   for (let i = 0; i < 3; i++) {
@@ -10,7 +11,7 @@ function printResults () {
 }
 
 function httpGet (index) {
-  http.get("http://nodejs.org/dist/index.json", function (response) {
+  http.get(urls[index], function (response) {
     response.pipe(bl(function (err, data) {
       if (err) {
         return console.error(err);
