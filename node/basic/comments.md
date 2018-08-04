@@ -61,5 +61,11 @@ Semelhante a `http.request()`, porém já definido como um método GET, realiza 
 
 ### handler
 - `response.on("data", console.log);` :arrow_lower_right:
-- `response.on("error", console.error);` :arrow_right: objeto IncomingMessage. 
+- `response.on("error", console.error);` :arrow_right: objeto _IncomingMessage_. 
+
+## npm -- bl (BufferList)
+
+Através de um _stream piped_ será realizado a coleta de dados. Ao terminar a stream, um callback vai ser disparado com os dados.
+O parâmetro `data` resultante do callback é uma concatenação de todos objetos `Buffer` da lista. O objetivo é armazenar todos os dados 
+do buffer ou parte destes.
 
