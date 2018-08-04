@@ -55,7 +55,7 @@ Cada módulo também é privado(acessível apenas a partir do código do módulo
 
 ## `http.get(url[, options][, callback])`
 
-Semelhante a `http.request()`, porém já definido como um método GET, realiza as chamadas `req.end()` de modo automático.
+Semelhante a `http.request()`, porém já definido como um método GET, realiza a chamada `req.end()` de modo automático.
 
 ![eventDebug](https://raw.githubusercontent.com/Rondinelly/Craftwork/master/resources/end.PNG)
 
