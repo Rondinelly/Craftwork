@@ -17,4 +17,4 @@ const server = net.createServer(function (socket) {
   socket.end(now() + "\n");
 })
 
-server.listen(3001);
+server.listen(8124);
