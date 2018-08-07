@@ -59,7 +59,8 @@ Cada módulo também é privado(acessível apenas a partir do código do módulo
 
 ## `http.get(url[, options][, callback])`
 
-Semelhante a `http.request()`, porém já definido como um método GET, realiza a chamada `req.end()` de modo automático.
+Retorna uma nova instância de `http.ClientRequest`, semelhante a `http.request()`, porém já definido como um método GET, realiza
+a chamada `req.end()` de modo automático.
 
 ![eventDebug](https://raw.githubusercontent.com/Rondinelly/Craftwork/master/resources/end.PNG)
 
@@ -73,16 +74,38 @@ Através de um _stream piped_ será realizado a coleta de dados. Ao terminar a s
 O parâmetro `data` resultante do callback é uma concatenação de todos objetos `Buffer` da lista. O objetivo é armazenar todos os 
 dados do buffer ou parte destes.
 
-## net.createServer([options][, connectionListener])
+## `net.createServer([options][, connectionListener])`
 
-Cria um servidor TCP ou IPC, sem HTTP. O argumento `connectionListener` é uma função, que é um ouvinte do evento `connection`,
-que por sua vez é emitido quando uma nova conexão é feita. `socket` é uma instância de `net.Socket` que herda de `stream.Duplex` 
-heranças de `stream.Readable`. Com isso, é possível usar `socket.write(data)` para escrever dados para o socket. Possui o evento 
-`socket.end()` que fecha o socket.
+Cria um servidor TCP ou IPC, sem HTTP. Retorna uma nova instância de `net.Server`. O argumento `connectionListener` é uma
+função, que é um ouvinte do evento `connection`, que por sua vez é emitido quando uma nova conexão é feita. `socket` é uma
+instância de `net.Socket` que herda de `stream.Duplex` heranças de `stream.Readable`. Com isso, é possível usar
+`socket.write(data)` para escrever dados para o socket. Possui o evento `socket.end()` que fecha o socket.
 
 **Comando para teste local**
 
 ```console
 $ telnet localhost --porta
 ```
+
+## `http.createServer([options][, requestListener])`
+
+Retorna uma nova instância de `http.Server`(servidor http). `requestListener` é uma função que é automaticamente adicionada ao
+evento `'request'`, que é o evento acionado a cada requisição, tendo dois objetos:
+
+- `http.IncomingMessage`(request) utilizado para buscar propriedades.
+- `http.ServerResponse`(response) utilizado para enviar dados.
+
+**server.listen()**
+
+Inicia o servidor HTTP, que tem como parâmetro a porta de conexão escolhida.
+
+## `fs.createReadStream(path[, options])`
+
+Retorna uma nova instância de `fs.ReadStream`(objeto Readable Streams). Realiza o stream de arquivos, sendo o primeiro
+argumento: `path`, o caminho do arquivo.
+
+**Readable streams**
+
+`Readable streams` armazenam dados em memória até certo ponto, para ter mais dados disponíveis para leitura quando o stream fica 
+disponível para realizar o mesmo.
 
