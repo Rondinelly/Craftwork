@@ -109,3 +109,15 @@ argumento: `path`, o caminho do arquivo.
 `Readable streams` armazenam dados em memória até certo ponto, para ter mais dados disponíveis para leitura quando o stream fica 
 disponível para realizar o mesmo.
 
+## Class: http.IncomingMessage
+
+Pode ser usado para visualizar informações da requisição como status e dados.
+
+- **message.method**
+
+Campo apenas para leitura, contém o método HTTP da requisição no valor de uma string.
+
+## npm -- through2-map
+
+Tem por objetivo funcionar como `Array.prototype.map` em um _stream_, porém seu uso é apenas para modificar dados, não funciona
+para filtro.
