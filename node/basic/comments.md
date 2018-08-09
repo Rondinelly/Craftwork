@@ -133,3 +133,12 @@ url.
 
 - `parseQueryString` propriedade _boolean_ que se habilitada preenche a propriedade `query` análisada, caso contrário
 retorna apenas a string.
+
+## Class: http.ServerResponse
+
+Criado internamente pelo servidor HTTP.
+
+- **response.writeHead(statusCode[, statusMessage][, headers])**
+
+Preenche o cabeçalho na reposta de uma requisição. Sendo o primeiro argumento o código do status HTTP e o `statusMessage` a
+string que especifica como será apresentado a resposta.
