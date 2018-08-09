@@ -117,7 +117,19 @@ Pode ser usado para visualizar informações da requisição como status e dados
 
 Campo apenas para leitura, contém o método HTTP da requisição no valor de uma string.
 
+- **message.url**
+
+Contém a url da requisição.
+
 ## npm -- through2-map
 
 Tem por objetivo funcionar como `Array.prototype.map` em um _stream_, porém seu uso é apenas para modificar dados, não funciona
 para filtro.
+
+## `url.parse(urlString[, parseQueryString[, slashesDenoteHost]])`
+
+Transforma uma string em um objeto URL. Um objeto URL contém propriedades com informações dos componentes presentes em uma 
+url.
+
+- `parseQueryString` propriedade _boolean_ que se habilitada preenche a propriedade `query` análisada, caso contrário
+retorna apenas a string.
