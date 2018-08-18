@@ -53,3 +53,21 @@ Alguns [exemplos](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html#
 
 **Observação:** caso queira o valor de uma variável dentro uma string, é preciso declarar a string com aspas duplas `"` em vez
 de usar aspas simples `'`.
+
+## Parâmetros posicionais
+
+Parâmetros posicionais são variáveis atribuidas posicionalmente a uma função.
+
+| Parâmetro     | Descrição                                                 |
+| ------------- | --------------------------------------------------------- |
+| `$0`          | Nome do Script                                            |
+| `$1 … $9`     | Primeiro argumento, segundo argumento...                  |
+| `$*` or `$@`  | Todos os parâmetros posicionais, exceto `$0`.             |
+| `$#`          | O número de parâmetros, sem contar `$0`.                  |
+| `$FUNCNAME`   | O nome da função(usado somente dentro de uma função).     |
+
+No exemplo abaixo, os parâmetros posicionais são `$0='./script.sh'`, `$1='foo'` e `$2='bar'`:
+
+```bash
+./script.sh foo bar
+```
