@@ -15,6 +15,7 @@ Lançado em 1989, Bash é um interpretador de shell Unix escrito por Brian Fox p
 - `echo` imprime um texto no terminal.
 - `chmod +x` atribui permissão no Unix, ou seja, faz com que o _script_ seja executável no mesmo.
 - `unset` apaga uma variável.
+- `$BASH_VERSION` versão do bash.
 
 ## Arquivos `.bash` (Modo não interativo)
 
@@ -71,3 +72,15 @@ No exemplo abaixo, os parâmetros posicionais são `$0='./script.sh'`, `$1='foo'
 ```bash
 ./script.sh foo bar
 ```
+
+## Arrays
+
+Tem forma semelhante a de outras linguagens de programação, porém com algumas peculiaridades, tais como:
+
+- `${@:1:2}` em que `@` seleciona o array por determinada posição, `1` retorna o índice do array e `2` o cumprimento a partir da posição
+do índice.
+
+- `[*]` retorna todo conteúdo de um array, `[@]` também pode ser usado e tem o mesmo objetivo.
+
+
+
