@@ -82,5 +82,43 @@ do índice.
 
 - `[*]` retorna todo conteúdo de um array, `[@]` também pode ser usado e tem o mesmo objetivo.
 
+## Shell expansions
+
+[Uma expansão é executada na linha de comando depois de ter sido dividida em _tokens_.](https://www.gnu.org/software/bash/manual/bash.html#Shell-Expansions)
+
+**Expansão aritmética**
+
+- Para que qualquer expressão aritmética seja calculada, usa-se `$(( ))`.
+
+Exemplo:
+
+```bash
+echo $(( (2 + 2) * 5)) #20
+```
+**Substituição de comando**
+
+- Possibilita que o valor de um comando possa ser atribuido a uma variável, através do uso de <code>``</code> ou `$()`.
+
+Exemplo:
+
+```bash
+echo `date` # dom, 19 de ago de 2018 11:31:18 
+```
+
+**Expansões de chaves**
+
+- Usando apenas chaves `{}`, tem como objetivo fazer mais de uma tarefa em um só comando, no qual pode-se gerar string diferentes,
+arquivos e até criar intervalos pré determinados em um loop, usando `..`.
+
+Exemplos:
+
+```bash
+mkdir -p project/{src,doc,tools}/
+```
+
+```bash
+echo {00..10..2} # 00 02 04 06 08 10 
+```
+
 
 
