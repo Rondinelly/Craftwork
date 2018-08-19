@@ -120,5 +120,13 @@ mkdir -p project/{src,doc,tools}/
 echo {00..10..2} # 00 02 04 06 08 10 
 ```
 
+## Streams
+
+| Código |  Descritor | Descrição            |
+|  --    |  --------  |  ------------------- |
+| `0`    | `stdin`    | Entrada padrão       |
+| `1`    | `stdout`   | Saída padrão         |
+| `2`    | `stderr`   | Saída de erros       |
+
 
 
