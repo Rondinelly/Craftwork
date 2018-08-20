@@ -90,7 +90,7 @@ do índice.
 
 - Para que qualquer expressão aritmética seja calculada, usa-se `$(( ))`.
 
-Exemplo:
+**Exemplo:**
 
 ```bash
 echo $(( (2 + 2) * 5)) #20
@@ -99,7 +99,7 @@ echo $(( (2 + 2) * 5)) #20
 
 - Possibilita que o valor de um comando possa ser atribuido a uma variável, através do uso de <code>``</code> ou `$()`.
 
-Exemplo:
+**Exemplo:**
 
 ```bash
 echo `date` # dom, 19 de ago de 2018 11:31:18 
@@ -110,7 +110,7 @@ echo `date` # dom, 19 de ago de 2018 11:31:18
 - Usando apenas chaves `{}`, tem como objetivo fazer mais de uma tarefa em um só comando, no qual pode-se gerar string diferentes,
 arquivos e até criar intervalos pré determinados em um loop, usando `..`.
 
-Exemplos:
+**Exemplos:**
 
 ```bash
 mkdir -p project/{src,doc,tools}/
@@ -122,11 +122,49 @@ echo {00..10..2} # 00 02 04 06 08 10
 
 ## Streams
 
+Descritores:
+
 | Código |  Descritor | Descrição            |
 |  --    |  --------  |  ------------------- |
 | `0`    | `stdin`    | Entrada padrão       |
 | `1`    | `stdout`   | Saída padrão         |
 | `2`    | `stderr`   | Saída de erros       |
 
+Para redirecionar streams, esses operadores são usados:
 
+| Operador | Descrição                             |
+| -------- | ------------------------------------- |
+| `>`      | Redireciona a saída                   |
+| `&>`     | Redireciona a saída de erro           |
+| `&>>`    | Redireciona a saída com saída de erro |
+| `<`      | Redireciona entrada                   |
 
+**Exemplo:**
+
+Grava a saída do comando em um arquivo texto:
+
+```bash
+ls > list.txt
+```
+
+Faz a leitura do arquivo texto:
+
+```bash
+less < list.txt
+```
+
+**Pipe**
+
+Pode ser usado para processar dados em um processo com vários comandos.
+
+**Por exemplo:**
+
+```bash
+ls -l | grep .txt$ | less
+```
+
+**Listas de comandos: `&&` e `||`**
+
+- `command1 && command2` significa que `command2` somente será executado se `command1` for executado com sucesso(retorno 0).
+
+- `command1 || command2` quer dizer que `command2` será executado, caso aconteça algum erro com `command1`(retorna um erro).
