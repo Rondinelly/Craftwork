@@ -168,3 +168,29 @@ ls -l | grep .txt$ | less
 - `command1 && command2` significa que `command2` somente será executado se `command1` for executado com sucesso(retorno 0).
 
 - `command1 || command2` quer dizer que `command2` será executado, caso aconteça algum erro com `command1`(retorna um erro).
+
+## `if`
+
+- Usa `[[ ]]` ao montar o `if` para determinar a condição.
+- Usa `then` para indicar o resultado da condição.
+- `elif` deve ser usado, caso tenha mais de uma condição, em vez de ~~`else if`~~, ou seja, `else` será usado apenas quando não
+houver mais nenhuma condição.
+- `fi` indica o final do código executado condicionalmente.
+
+**Expressões:**
+
+| Primary  | Significado                                |
+| -------- | ------------------------------------------ |
+| `-z`     | _string_ vazia                             |
+| `-n`     | _string_ não vazia                         |
+| `-eq`    | igual                                      |
+| `-ne`    | diferente                                  |
+| `-lt`    | menor que                                  |
+| `-le`    | menor ou igual que                         |
+| `-gt`    | maior que                                  |
+| `-ge`    | maior ou igual que                         |
+| `! EXPR` | retorna _true_ se `EXPR` é igual a _false_ |
+| `(EXPR)` | retorna o valor de `EXPR`                  |
+| `-a`     | _AND_                                      |
+| `-o`     | _OR_                                       |
+
