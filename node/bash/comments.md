@@ -194,3 +194,12 @@ houver mais nenhuma condição.
 | `-a`     | _AND_                                      |
 | `-o`     | _OR_                                       |
 
+## `case`
+
+É declarado dessa forma: `case ($1) in`, no qual `$1` é a variável para determinar a condição. Após essa declaração, cada
+parêntese empregado assim `)` ou desta forma `()` , indica o valor a que pertence(condição), ou seja, o valor da variável
+dentro do `case` será comparado com o valor dentro de cada bloco `()`, a fim de determinar o que será executado. Cada bloco 
+usa o operador `;;`, para delimitar o fim do mesmo. Pode ser usado também o sinal `*` dentro de um bloco para determinar uma
+condição como _default_. Para fechar um `case` é preciso da palava-chave `esac`.
+
+
