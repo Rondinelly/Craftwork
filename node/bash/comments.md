@@ -202,4 +202,35 @@ dentro do `case` será comparado com o valor dentro de cada bloco `()`, a fim de
 usa o operador `;;`, para delimitar o fim do mesmo. Pode ser usado também o sinal `*` dentro de um bloco para determinar uma
 condição como _default_. Para fechar um `case` é preciso da palava-chave `esac`.
 
+## loop 
 
+Existem quatro tipos de loop em bash, são eles: `for`, `while`, `until` e `select`, os principais são `for` e `while`.
+
+**`for`**
+
+- É declarado dessa maneira: `for arg in elemN;`, seguido por `do`, depois o bloco de código a ser executado e finaliza com
+`done`.
+
+**Exemplo:**
+
+```bash
+for i in {1..5};
+do
+  echo $i
+done 
+```
+- Pode ser escrito em uma linha, porém deve ser usado ponto e vígula depois de cada palavra chave.
+
+**`while`**
+
+- Executa uma instrução enquanto a condição for _true_. Tem a nomenclatura semelhante ao `for`.
+
+**Exemplo:**
+
+```bash
+i=$1
+while [[ $i -lt $2 ]]; do
+  [ ! $(( $i % 2 )) -eq 0 ] || echo $i
+  i=$(( $i + 1 ))
+done
+```
