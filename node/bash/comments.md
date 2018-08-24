@@ -234,3 +234,21 @@ while [[ $i -lt $2 ]]; do
   i=$(( $i + 1 ))
 done
 ```
+
+## function
+
+Semelhante a outras linguagens de programação, tem um bloco de chaves que executa um comando e pode retornar algum resultado.
+
+**Declaração:**
+
+```bash
+func () {
+  # declarações
+}
+
+func # chama func
+```
+
+
+
+
