@@ -16,6 +16,8 @@ Lançado em 1989, Bash é um interpretador de shell Unix escrito por Brian Fox p
 - `chmod +x` atribui permissão no Unix, ou seja, faz com que o _script_ seja executável no mesmo.
 - `unset` apaga uma variável.
 - `$BASH_VERSION` versão do bash.
+- `mv` move arquivos ou até diretórios de um lugar para outro.
+- `set` este comando pode ativar ou desativar opções. As opções são ativadas usando `-` e desativadas usando `+`.
 
 ## Arquivos `.bash` (Modo não interativo)
 
@@ -84,7 +86,7 @@ do índice.
 
 ## Shell expansions
 
-[Uma expansão é executada na linha de comando depois de ter sido dividida em _tokens_.](https://www.gnu.org/software/bash/manual/bash.html#Shell-Expansions)
+Uma expansão é formada por caracteres e expressóes a fim de executar uma tarefa.
 
 **Expansão aritmética**
 
@@ -107,8 +109,8 @@ echo `date` # dom, 19 de ago de 2018 11:31:18
 
 **Expansões de chaves**
 
-- Usando apenas chaves `{}`, tem como objetivo fazer mais de uma tarefa em um só comando, no qual pode-se gerar string diferentes,
-arquivos e até criar intervalos pré determinados em um loop, usando `..`.
+- Usando apenas chaves `{}`, tem como objetivo fazer mais de uma tarefa em um só comando, no qual pode-se gerar string
+diferentes, arquivos e até criar intervalos pré determinados em um loop, usando `..`.
 
 **Exemplos:**
 
@@ -249,6 +251,38 @@ func () {
 func # chama func
 ```
 
+## debug
 
+Existem opções que se adicionadas a localização do interpretador(shebang) ou ao comando `set` podem ajudar a entender a execução 
+de um _script_.
 
+| Flag | Nome        | Descrição                                                                  |
+| ---- | ----------- | -------------------------------------------------------------------------- |
+| `-n` | noexec      | Lê o comando, mas não os executa (verificação de sintaxe).                 |
+| `-v` | verbose     | Imprime cada comando `stdout` antes de executá-lo.                         |
+| `-x` | xtrace      | Imprime cada comando `stdout` antes de executá-lo e expande seus comandos. |
 
+**Comandos úteis:**
+
+- `set -vn` ativa as opções _verbose_ e _noexec_ usando `set`.
+- `echo $@` faz a saída de todos os parâmetros recebidos usando `echo`.
+- `touch $@` cria todos esses arquivos.
+- `mkdir ./folder` cria um diretório com nome _folder_ no diretório atual.
+- `mv file* ./folder` move todos os arquivos para a pasta _folder_.
+- `cd ./folder` altera o diretório para a pasta _folder_.
+- `set +vn` desativa as opções _verbose_ e _noexec_ usando `set`.
+
+## Aliases
+
+São úteis para comandos repetitivos, sendo escritos dessa forma:
+
+```bash
+alias c="cd $user"
+```
+Para que não fique apenas na memória é preciso adicioná-lo ao arquivo `.bashrc`.
+
+## Links úteis
+
+- [bash-handbook](https://github.com/denysdovhan/bash-handbook/blob/master/translations/pt-BR/README.md#guia-de-bolso-do-bash-ingl%C3%AAs-bash-handbook) [**Traduzido**]
+
+- [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
