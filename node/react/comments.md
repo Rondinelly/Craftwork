@@ -57,4 +57,12 @@ sem repetir o código.
 - Um componente filho pode ter valores entregues por meio de atributos ou por meio de conteúdo aninhado.
 - `this.props.children` é usado para exibir o que é incluso entre tags ao invocar um componente. Tem o objetivo de personalizar
 o conteúdo do seu aplicativo e, ao mesmo tempo, reutilizar os mesmos componentes.
-- `Props` são Read-Only, portanto, não é recomendado alterá-las.
+- Props são Read-Only, portanto, não é recomendado alterá-las.
+
+## `Proptypes`
+
+É um [pacote](https://www.npmjs.com/package/prop-types) que garante que os componentes estão sendo utilizados da forma correta.
+`PropTypes` não ajuda apenas a encontrar bugs, mas também serve como uma documentação útil sobre como um componente deve ser
+usado. `PropTypes` define o tipo de um `prop`. Com isso, cada vez que um valor é atribuído através de um `prop`, ele é
+validado pelo seu tipo. Se for atribuído um valor através de um `prop` com tipos de dados divergente do especificado em
+`PropTypes`, um erro será exibido no console do navegador. Similares a esse pacote, existem [Flow](https://github.com/facebook/flow) e [TypeScript](https://github.com/Microsoft/TypeScript).
