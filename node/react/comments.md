@@ -61,8 +61,19 @@ o conteúdo do seu aplicativo e, ao mesmo tempo, reutilizar os mesmos componente
 
 ## `Proptypes`
 
-É um [pacote](https://www.npmjs.com/package/prop-types) que garante que os componentes estão sendo utilizados da forma correta.
-`PropTypes` não ajuda apenas a encontrar bugs, mas também serve como uma documentação útil sobre como um componente deve ser
-usado. `PropTypes` define o tipo de um `prop`. Com isso, cada vez que um valor é atribuído através de um `prop`, ele é
+É um [pacote](https://www.npmjs.com/package/prop-types) para garantir que os componentes estão sendo utilizados da forma
+correta. `PropTypes` não ajuda apenas a encontrar bugs, mas também serve como uma documentação útil sobre como um componente
+deve ser usado. `PropTypes` define o tipo de um `prop`. Com isso, cada vez que um valor é atribuído através de um `prop`, ele é
 validado pelo seu tipo. Se for atribuído um valor através de um `prop` com tipos de dados divergente do especificado em
-`PropTypes`, um erro será exibido no console do navegador. Similares a esse pacote, existem [Flow](https://github.com/facebook/flow) e [TypeScript](https://github.com/Microsoft/TypeScript).
+`PropTypes`, um erro será exibido no console do navegador. Similares a esse pacote, existem [Flow](https://github.com/facebook/flow)
+e [TypeScript](https://github.com/Microsoft/TypeScript).
+
+## State
+
+É usado para atualizar um componente. _State_ é interno a um componente. Portanto, _State_ é usado dentro dos componentes para
+manter o controle das informações. Sempre que houver dados que serão alterados dentro de um componente, _State_ poderá ser
+usado, ou seja, pode ser quando o usuário interagir com a tela ou um componente que necessite que seu valor seja atualizado.
+
+- `setState` altera o estado de um componente, com isso, o React re-processa o atual componente e de todos os componentes
+filhos.
+- `this.state` nunca pode ser alterado diretamente, sempre deve ser usado `setState` para tal.
