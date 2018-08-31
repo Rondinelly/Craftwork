@@ -77,3 +77,18 @@ usado, ou seja, pode ser quando o usuário interagir com a tela ou um componente
 - `setState` altera o estado de um componente, com isso, o React re-processa o atual componente e de todos os componentes
 filhos.
 - `this.state` nunca pode ser alterado diretamente, sempre deve ser usado `setState` para tal.
+
+## CSS
+
+```html
+<div style={styles.container}>
+```
+
+A idéia geral é escrever CSS na forma de objeto literal Javascript, que se aproxima da sintaxe natural. Com isso, é possível
+aplicar ao componente React usando o atributo `style`. O atributo `style` aceita um objeto JavaScript com propriedades
+_camelCased_, em vez de uma string CSS. Isso é consistente também com a propriedade JavaScript `style` do DOM. 
+
+**Particularidades**
+
+- React anexará automaticamente um sufixo _"px"_ a determinadas propriedades numéricas.
+- Caso necessário, seja atribuir unidades diferentes de _"px"_, especifique o valor em forma de string com a unidade desejada.
