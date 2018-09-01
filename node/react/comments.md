@@ -92,3 +92,14 @@ _camelCased_, em vez de uma string CSS. Isso é consistente também com a propri
 
 - React anexará automaticamente um sufixo _"px"_ a determinadas propriedades numéricas.
 - Caso necessário, seja atribuir unidades diferentes de _"px"_, especifique o valor em forma de string com a unidade desejada.
+
+## Props from server
+
+```jsx
+<li key={number.toString()}>{number}</li>
+```
+
+Para preencher a tela com informações a partir de dados de um servidor, é preciso incluí-los no JSX usando chaves `{}`. Para isso existe
+a atributo `Key` que o React usa com o intuito de identificar quais itens foram alterados, adicionados ou removidos, acompanhando cada
+componente no VirtualDOM. 
+
