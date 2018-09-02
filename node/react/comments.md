@@ -134,3 +134,44 @@ navegador.
 então faz a resolução de dependência mágica. Resumindo, `babelify` transforma código 'jsx' em 
 código JavaScript.
 
+## `handleChange`
+
+Chama a função especificada como `onChange` no DOM `<input>`. É util para atualizar o `State` de um 
+elemento. Quando a aplicação é atualizada, novas informações são propagadas e a aplicação precisa ser 
+renderizada novamente. Para isso, o React divide este processo  em duas etapas:
+
+1. _**reconciliation**_ no qual o React calcula diferenças e decide quais atualizações são 
+necessárias.
+
+1. _**rendering**_ em que  as atualizações são realmente aplicadas, o React não se importa com a 
+forma como os componentes são renderizados, mas apenas com o que mudou entre duas renderizações, os 
+componentes em si não importam. Apenas o trabalho que precisa ser feito para transformar o antigo 
+`state` do componente em um novo `state` é a prioridade.
+
+**Eventos**
+
+- Os eventos em React são nomeados usando _camelCase_, em vez de minúsculas.
+- Com o JSX, uma função é um manipulador de eventos, em vez de uma string.
+
+Pode-se acessar as propriedades de um evento, por exemplo:
+
+```html
+onChange (event) {
+  console.log(event.target.name);
+  console.log(event.target.value); 
+}
+```
+
+Sendo:
+
+- `event.target.name` o nome do elemento.
+- `event.target.value` o valor do elemento.
+
+```jsx
+this.handleChange = this.handleChange.bind(this);
+```
+
+Esse `bind` é necessário para fazer `this` funcionar como um `callback`. A fim de evitar que `this` 
+não seja `undefined`, quando ocorrer  a chamada da função, não sendo possível, portanto, atualizar o 
+`state`do componente.
+
