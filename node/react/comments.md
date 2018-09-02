@@ -115,9 +115,22 @@ quais itens foram alterados, adicionados ou removidos, acompanhando cada compone
 
 ## Isomorphic
 
-```jsx
-this.handleChange = this.handleChange.bind(this);
-```
+_Isomorphic_ é a renderização por parte do servidor para o _front end_. Portanto, os componentes 
+são criados pelo servidor, que por sua vez os transformam em HTML estático para o navegador.
 
+**`browserify`**
 
+`browserify` permite usar requisições semelhantes ao NodeJS. É possível solicitar, exportar módulos 
+e gerenciar suas dependências no navegador, como no NodeJS. Para que isso aconteça , o módulo 
+`browserify` faz a função de um "empacotador" JavaScript que consequentemente "empacota" módulos 
+dentro de um arquivo `.js` para que seja possível incluir estes pacotes em uma página web com a tag 
+`<script>`. A maior vantagem disso, é que possibilita usar o _npm_ para instalar e gerenciar as 
+dependências de um módulo. Ele também adicionará mapas de origem, o que facilita a depuração no 
+navegador.
+
+**`babelify`**
+
+`babelify` é uma ferramenta de transformação que o `browserify` usa para converter ES6 em ES5 e 
+então faz a resolução de dependência mágica. Resumindo, `babelify` transforma código 'jsx' em 
+código JavaScript.
 
