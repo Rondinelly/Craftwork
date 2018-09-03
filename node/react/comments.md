@@ -138,7 +138,7 @@ código JavaScript.
 
 Chama a função especificada como `onChange` no DOM `<input>`. É util para atualizar o `State` de um 
 elemento. Quando a aplicação é atualizada, novas informações são propagadas e a aplicação precisa ser 
-renderizada novamente. Para isso, o React divide este processo  em duas etapas:
+renderizada novamente. Para isso, o React divide este processo em duas etapas:
 
 1. _**reconciliation**_ no qual o React calcula diferenças e decide quais atualizações são 
 necessárias.
@@ -148,7 +148,7 @@ forma como os componentes são renderizados, mas apenas com o que mudou entre du
 componentes em si não importam. Apenas o trabalho que precisa ser feito para transformar o antigo 
 `state` do componente em um novo `state` é a prioridade.
 
-**Eventos**
+## Eventos
 
 - Os eventos em React são nomeados usando _camelCase_, em vez de minúsculas.
 - Com o JSX, uma função é um manipulador de eventos, em vez de uma string.
