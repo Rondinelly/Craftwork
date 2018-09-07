@@ -140,18 +140,18 @@ Chama a função especificada como `onChange` no DOM `<input>`. É util para atu
 elemento. Quando a aplicação é atualizada, novas informações são propagadas e a aplicação precisa ser 
 renderizada novamente. Para isso, o React divide este processo em duas etapas:
 
-1. _**reconciliation**_ no qual o React calcula diferenças e decide quais atualizações são 
+1. _**reconciliation**_: processo no qual o React calcula diferenças e decide quais atualizações são 
 necessárias.
 
-1. _**rendering**_ em que  as atualizações são realmente aplicadas, o React não se importa com a 
-forma como os componentes são renderizados, mas apenas com o que mudou entre duas renderizações, os 
-componentes em si não importam. Apenas o trabalho que precisa ser feito para transformar o antigo 
-`state` do componente em um novo `state` é a prioridade.
+1. _**rendering**_: processo em que as atualizações são realmente aplicadas, o React não se importa com a 
+forma como os componentes são renderizados, apenas com o que mudou entre duas renderizações, os 
+componentes em si não importam. A prioridade é transformar o `state` antigo do componente em um 
+novo `state`.
 
 ## Eventos
 
-- Os eventos em React são nomeados usando _camelCase_, em vez de minúsculas.
-- Com o JSX, uma função é um manipulador de eventos, em vez de uma string.
+- Os eventos em React são nomeados usando _camelCase_, em vez de letras em minúsculo.
+- Com o JSX, uma função é um manipulador de eventos, em vez de uma string literal.
 
 Pode-se acessar as propriedades de um evento, por exemplo:
 
@@ -174,4 +174,32 @@ this.handleChange = this.handleChange.bind(this);
 Esse `bind` é necessário para fazer `this` funcionar como um `callback`. A fim de evitar que `this` 
 não seja `undefined`, quando ocorrer  a chamada da função, não sendo possível, portanto, atualizar o 
 `state`do componente.
+
+**Exemplo da construção de um evento:**
+
+```jsx
+changeTitle
+```
+
+1. Definir o `bind` no construtor da classe ES6 do componente:
+
+```jsx
+this.changeTitle = this.changeTitle.bind(this);
+```
+
+2. Criar o manipulador de eventos como um método da classe do componente:
+
+```jsx
+ changeTitle(e) {
+        this.setState({titleValue: e.target.value});
+    }
+```
+
+3. Por fim, adicionar a renderização do elemento:
+
+```jsx
+ <div>
+Title:<input type="text" value={this.state.titleValue} onChange={this.changeTitle}/>                  
+</div>
+```
 
