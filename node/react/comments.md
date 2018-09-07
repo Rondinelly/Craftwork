@@ -143,8 +143,8 @@ renderizada novamente. Para isso, o React divide este processo em duas etapas:
 1. _**reconciliation**_: processo no qual o React calcula diferenças e decide quais atualizações são 
 necessárias.
 
-1. _**rendering**_: processo em que as atualizações são realmente aplicadas, o React não se importa com a 
-forma como os componentes são renderizados, apenas com o que mudou entre duas renderizações, os 
+1. _**rendering**_: processo em que as atualizações são realmente aplicadas, o React não se importa 
+com a forma como os componentes são renderizados, apenas com o que mudou entre duas renderizações, os 
 componentes em si não importam. A prioridade é transformar o `state` antigo do componente em um 
 novo `state`.
 
@@ -203,3 +203,36 @@ Title:<input type="text" value={this.state.titleValue} onChange={this.changeTitl
 </div>
 ```
 
+## Comunicação de um evento entre componente pai e filho
+
+[Primeiro, crie o evento no componente pai:](https://stackoverflow.com/questions/44831916/how-to-delete-a-todo-item-onclick-in-react)
+
+```jsx
+<button onClick={this._onDelete}>clear</button>
+```
+
+Faça o `bind` no construtor:
+
+```jsx
+this._onDelete = this._onDelete.bind(this);
+```
+
+Defina o evento como um método no componente pai:
+
+```jsx
+ _onDelete() {
+        this.props.onDelete(this.props.title);
+    }
+```    
+
+Em seguida, dentro do componente filho, chame o evento definido no componente pai:
+
+```jsx
+return <Todo key={obj.title} onDelete={this.deleteTodo}>{obj.detail}</Todo>;
+```
+
+## Links 
+
+- [reactjs.org](https://reactjs.org/docs/getting-started.html)
+
+- [react-howto](https://github.com/petehunt/react-howto)
