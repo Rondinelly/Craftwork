@@ -64,6 +64,47 @@ Quando transformado em CSS fica:
 }
 ```
 
+## NESTED RULES
+
+O aninhamento facilita a leitura e manutenção do seu CSS. É uma ótima maneira de organizar 
+seu CSS e torná-lo mais legível.
+
+**Por exemplo:**
+
+Arquivo `.less`
+
+```less 
+.red-text {
+  color: #F44336;
+}
+
+aside {
+  ul {
+    margin: 0;
+  }
+  a {
+    .red-text;
+  }
+}
+```
+
+- Note que os seletores `ul` e `a` são aninhados no interior do seletor `aside`. 
+
+Quando transformado em CSS fica:
+
+```css
+.red-text {
+  color: #F44336;
+}
+aside ul {
+  margin: 0;
+}
+aside a {
+  color: #F44336;
+}
+```
+
+
 
 
 
