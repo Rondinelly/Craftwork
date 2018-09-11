@@ -104,6 +104,44 @@ aside a {
 }
 ```
 
+## Nested directives and bubbling
+
+É possível aninhar diretivas, da mesma forma que é feita com seletores.
+Quando se coloca uma diretiva no topo, seus elementos relativos serão 
+alterados dentro do conjunto de regras definido. Isso é conhecido como _bubbling_.
+
+**Por exemplo:**
+
+Arquivo `.less`
+
+```less 
+.screen-color {
+  @media screen {
+    color: #212121;
+    @media (min-width: 768px) {
+      color: #333333;
+    }
+  }
+}
+```
+
+Quando transformado em CSS fica:
+
+```css
+@media screen {
+  .screen-color {
+    color: #212121;
+  }
+}
+@media screen and (min-width: 768px) {
+  .screen-color {
+    color: #333333;
+  }
+}
+```
+
+
+
 
 
 
