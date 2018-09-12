@@ -13,7 +13,7 @@ do NodeJS, no navegador e dentro do [Rhino](https://github.com/mozilla/rhino).
 
 Para criar uma variável, anexe o símbolo `@` ao início do nome de uma variável.
 
-**Por exemplo:**
+**Exemplo:**
 
 Arquivo `.less`
 
@@ -39,7 +39,7 @@ Mixins permitem que você adicione todas as propriedades de uma classe em outra 
 incluindo o nome da classe como uma de suas propriedades. Assim como variáveis, mas para classes 
 completas. 
 
-**Por exemplo:**
+**Exemplo:**
 
 Arquivo `.less`
 
@@ -53,7 +53,7 @@ Arquivo `.less`
 }
 ```
 
-Quando transformado em CSS fica:
+CSS:
 
 ```css
 .header {
@@ -69,7 +69,7 @@ Quando transformado em CSS fica:
 O aninhamento facilita a leitura e manutenção do seu CSS. É uma ótima maneira de organizar 
 seu CSS e torná-lo mais legível.
 
-**Por exemplo:**
+**Exemplo:**
 
 Arquivo `.less`
 
@@ -90,7 +90,7 @@ aside {
 
 - Note que os seletores `ul` e `a` são aninhados no interior do seletor `aside`. 
 
-Quando transformado em CSS fica:
+CSS:
 
 ```css
 .red-text {
@@ -110,7 +110,7 @@ aside a {
 Quando se coloca uma diretiva no topo, seus elementos relativos serão 
 alterados dentro do conjunto de regras definido. Isso é conhecido como _bubbling_.
 
-**Por exemplo:**
+**Exemplo:**
 
 Arquivo `.less`
 
@@ -125,7 +125,7 @@ Arquivo `.less`
 }
 ```
 
-Quando transformado em CSS fica:
+CSS:
 
 ```css
 @media screen {
@@ -140,7 +140,37 @@ Quando transformado em CSS fica:
 }
 ```
 
+## Operations
 
+LESS fornece suporte para operações aritméticas, tais como `+`, `-`, `*` e `/`, podendo 
+ser aplicado a números, cores e variáveis.
+
+**Exemplo:**
+
+Arquivo `.less`
+
+```less 
+@container-margin: 20px;
+.container {
+  margin: @container-margin;
+  @media (max-width: 480px) {
+    margin: (@container-margin / 2);
+  }
+}
+```
+
+CSS:
+
+```css
+.container {
+  margin: 20px;
+}
+@media (max-width: 480px) {
+  .container {
+    margin: 10px;
+  }
+}
+```
 
 
 
