@@ -9,7 +9,7 @@ do NodeJS, no navegador e dentro do [Rhino](https://github.com/mozilla/rhino).
 
 - Usa a extensão `.less` para seus arquivos.
 
-## VARIABLES
+## Variables
 
 Para criar uma variável, anexe o símbolo `@` ao início do nome de uma variável.
 
@@ -64,7 +64,7 @@ CSS:
 }
 ```
 
-## NESTED RULES
+## Nested rules
 
 O aninhamento facilita a leitura e manutenção do seu CSS. É uma ótima maneira de organizar 
 seu CSS e torná-lo mais legível.
@@ -172,6 +172,28 @@ CSS:
 }
 ```
 
+## Escaping
+
+Usando `~` como prefixo, se forma um Escaping, que permite usar qualquer string arbitrária 
+ou valor de variável como propriedade, ou seja, constrói seletores dinamicamente.
+
+**Exemplo:**
+
+Arquivo `.less`
+
+```less 
+.coloured-block {
+  background-color: ~"green";
+}
+```
+
+CSS:
+
+```css
+.coloured-block {
+  background-color: green;
+}
+```
 
 
 
