@@ -67,7 +67,7 @@ CSS:
 ## Nested rules
 
 O aninhamento facilita a leitura e manutenção do seu CSS. É uma ótima maneira de organizar 
-seu CSS e torná-lo mais legível.
+seu CSS e torná-o mais legível.
 
 **Exemplo:**
 
@@ -193,6 +193,124 @@ CSS:
 .coloured-block {
   background-color: green;
 }
+```
+
+## Functions
+
+Less mapeia o código JavaScript para manipulação de valores e usa funções predefinidas que 
+manipulam aspectos de elementos HTML na folha de estilo. LESS fornece uma variedade de funções 
+que transformam cores, manipulam strings e até realiza cálculos matemáticos. 
+
+**Exemplo:**
+
+Arquivo `.less`
+
+```less 
+@width: 0.05;
+
+.coln {
+  margin: percentage(@width);
+}
+```
+
+CSS:
+
+```css
+.coln {
+  margin: 5%;
+}
+```
+
+## Namespaces and accessors
+
+Usando `#` como prefixo, se define um namespace. Podendo agrupar _mixins_ com um nome 
+em comum. Namespaces, evitam conflito de nome e encapsulam um grupo de _mixins_ externamente.
+
+**Exemplo:**
+
+Arquivo `.less`
+
+```less 
+#header-styles {
+  .header-lg {
+    font-size: 32px;
+  }
+}
+
+.page-header {
+  color: #111111;
+  #header-styles > .header-lg;
+}
+```
+
+É preciso referenciar _namespace_ `>` _mixin_.
+Isso quer dizer, que só se acessa `.header-lg`, com o namespace `#header-styles`.
+
+CSS:
+
+```css
+#header-styles .header-lg {
+  font-size: 32px;
+}
+.page-header {
+  color: #111111;
+  font-size: 32px;
+}
+```
+
+
+## Scope
+
+Variáveis e _mixins_ são procurados localmente, se não forem encontrados, 
+o compilador irá procurar no escopo pai e assim por diante.
+
+**Exemplo:**
+
+Arquivo `.less`
+
+```less 
+@padding: percentage(0.01);
+
+.card {
+  @padding: 10px;
+  .footer {
+    padding: @padding;
+  }
+}
+```
+
+CSS:
+
+```css
+.card .footer {
+  padding: 10px;
+}
+```
+
+## Importing
+
+A instrução `@import`, permite importar um arquivo `.less`. Com isso todas as variáveis 
+e _mixins_ definidos serão disponibilizados.
+
+**Exemplo:**
+
+Arquivo `.less`
+
+```less 
+@import "variables";
+
+.card {
+  margin: @margin;
+  padding: @padding;
+  color: #111111;
+}
+```
+
+Arquivo `.less` contendo as variáveis:
+
+```less
+@padding: 10px;
+@margin: 5%;
 ```
 
 
