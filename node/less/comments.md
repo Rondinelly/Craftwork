@@ -9,6 +9,16 @@ do NodeJS, no navegador e dentro do [Rhino](https://github.com/mozilla/rhino).
 
 - Usa a extensão `.less` para seus arquivos.
 
+## Resumo
+
+| Palavra-chave | Descrição                     |
+| ------------- | ----------------------------- |
+| `@`           | [Variáveis](https://github.com/Rondinelly/nodeschool-howto/blob/master/node/less/comments.md#variables)|
+| `.`           | [_Mixins_](https://github.com/Rondinelly/nodeschool-howto/blob/master/node/less/comments.md#mixins)    |
+| `~`           | [_Escaping_](https://github.com/Rondinelly/nodeschool-howto/blob/master/node/less/comments.md#escaping)|
+| `#`           | [_Namespace_](https://github.com/Rondinelly/nodeschool-howto/blob/master/node/less/comments.md#namespaces-and-accessors)|
+| `@import`     | [Importa _Mixins_ ou variáveis](https://github.com/Rondinelly/nodeschool-howto/blob/master/node/less/comments.md#importing) |
+
 ## Variables
 
 Para criar uma variável, anexe o símbolo `@` ao início do nome de uma variável.
@@ -34,9 +44,9 @@ body {
 
 ## Mixins
 
-Mixins são uma maneira de incluir propriedades de um conjunto de regras em outro conjunto de regras. 
-Mixins permitem que você adicione todas as propriedades de uma classe em outra classe simplesmente 
-incluindo o nome da classe como uma de suas propriedades. Assim como variáveis, mas para classes 
+_Mixins_ são uma forma de incluir propriedades de um conjunto de regras em outro conjunto de regras. 
+_Mixins_ permitem que você adicione todas as propriedades de uma classe em outra classe simplesmente 
+incluindo o nome da classe como uma de suas propriedades. Assim como variáveis, porém para classes 
 completas. 
 
 **Exemplo:**
@@ -66,8 +76,8 @@ CSS:
 
 ## Nested rules
 
-O aninhamento facilita a leitura e manutenção do seu CSS. É uma ótima maneira de organizar 
-seu CSS e torná-o mais legível.
+O aninhamento facilita a leitura e manutenção do CSS. É uma maneira de organizar o CSS,  
+além de torná-lo mais legível.
 
 **Exemplo:**
 
@@ -108,7 +118,7 @@ aside a {
 
 É possível aninhar diretivas, da mesma forma que é feita com seletores.
 Quando se coloca uma diretiva no topo, seus elementos relativos serão 
-alterados dentro do conjunto de regras definido. Isso é conhecido como _bubbling_.
+alterados dentro do conjunto de regras definido. Isso é conhecido como **_bubbling_**.
 
 **Exemplo:**
 
@@ -174,8 +184,9 @@ CSS:
 
 ## Escaping
 
-Usando `~` como prefixo, se forma um Escaping, que permite usar qualquer string arbitrária 
-ou valor de variável como propriedade, ou seja, constrói seletores dinamicamente.
+Usando `~` como prefixo, se forma um _Escaping_. _Escaping_ permite usar qualquer 
+string arbitrária ou valor de variável como propriedade, ou seja, constrói 
+seletores dinamicamente.
 
 **Exemplo:**
 
@@ -223,8 +234,8 @@ CSS:
 
 ## Namespaces and accessors
 
-Usando `#` como prefixo, se define um namespace. Podendo agrupar _mixins_ com um nome 
-em comum. Namespaces, evitam conflito de nome e encapsulam um grupo de _mixins_ externamente.
+Um _namespace_ é definido usando `#` como prefixo. Podendo agrupar _mixins_ com um nome 
+em comum. _Namespaces_ evitam conflito de nome e encapsulam um grupo de _mixins_ externamente.
 
 **Exemplo:**
 
@@ -244,7 +255,7 @@ Arquivo `.less`
 ```
 
 É preciso referenciar _namespace_ `>` _mixin_.
-Isso quer dizer, que só se acessa `.header-lg`, com o namespace `#header-styles`.
+Isso quer dizer, que só se acessa `.header-lg`, com o _namespace_ `#header-styles`.
 
 CSS:
 
@@ -290,7 +301,7 @@ CSS:
 ## Importing
 
 A instrução `@import`, permite importar um arquivo `.less`. Com isso todas as variáveis 
-e _mixins_ definidos serão disponibilizados.
+e _mixins_ definidos são disponibilizados.
 
 **Exemplo:**
 
@@ -313,6 +324,9 @@ Arquivo `.less` contendo as variáveis:
 @margin: 5%;
 ```
 
+## Links 
 
+- [Less Tutorial](https://www.tutorialspoint.com/less/index.htm)
 
+- [CodePen](https://codepen.io/tag/less/)
 
