@@ -30,7 +30,7 @@ Retorna um novo objeto `Buffer`que contém uma cópia da string fornecida.
 
 ## Hexadecimal encoding
 
-`Buffer` atualmente suporta essas codificações: `"ascii"`, `"utf8"`, `"utf16le"`,
+`Buffer` atualmente suporta as seguintes codificações: `"ascii"`, `"utf8"`, `"utf16le"`,
 `"ucs2"`, `"base64"`, `"latin1"`, `"binary"` e `"hex"`.
 
 A codificação define o mapeamento da sequência de um valor para uma sequência de 
@@ -45,5 +45,26 @@ qual cada par representa um único número na matriz de _bytes_ convertidos em h
 
 ```js
 console.log(Buffer.from("bytewiser").toString("hex"));
-// Prints: 627974657769736572
+// Print: 627974657769736572
 ```
+
+## Modifying `Buffer`
+
+Existe a posssibilidade de alterar um `Buffer`, como um Array, por exemplo.
+
+```js
+// input: test...
+let dot = ".".charCodeAt(0);
+let exclamationPoint = "!".charCodeAt(0);
+
+process.stdin.on("data", function(buff) {
+  for (var i = 0; i < buff.length; i++) {
+    if (buff[i] === dot)
+       buff[i] = exclamationPoint
+  }
+  process.stdout.write(buff);
+  // Print: test!!!
+});
+```
+
+
