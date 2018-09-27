@@ -67,4 +67,32 @@ process.stdin.on("data", function(buff) {
 });
 ```
 
+## Line splitter
+
+- [buf.slice([start[, end]])](https://github.com/nodejs/node/blob/master/doc/api/buffer.md#bufslicestart-end)
+
+Através dos índices `start` e `end`, se obtém um novo `Buffer`, 
+dentro do trecho delimitado no índice.
+
+Pode-se, por exemplo, com um `Buffer`, dividir os dados por linha.
+
+```js
+let fs = require("fs");
+let file = fs.readFileSync(__dirname);
+let offset = 0;
+let NL = "\n".charCodeAt(0);
+
+for (let i = 0; i < file.length; i++) {
+  if (file[i] === NL) {
+    console.log(file.slice(offset, i))
+    i++
+    offset = i
+  }
+}
+```
+
+**Nota:** Ao dividir um `Buffer`, o espaço de memória dos dois objetos se sobrepõem, 
+portanto, ao modificar uma parte, consequentemente será sobrescrito no `Buffer`original.
+
+
 
