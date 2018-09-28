@@ -94,5 +94,26 @@ for (let i = 0; i < file.length; i++) {
 **Nota:** Ao dividir um `Buffer`, o espaço de memória dos dois objetos se sobrepõem, 
 portanto, ao modificar uma parte, consequentemente será sobrescrito no `Buffer`original.
 
+## `Buffer` concat
 
+- [Class Method: Buffer.concat(list[, totalLength])](https://github.com/nodejs/node/blob/master/doc/api/buffer.md#class-method-bufferconcatlist-totallength)
+
+Ao criar uma lista composta por objetos do tipo `Buffer`, com o método `concat`, se 
+transforma essa lista em um único objeto `Buffer`.
+
+```js
+let buffers = [];
+
+process.stdin.on("readable", () => {
+  let chunk = process.stdin.read();
+  if (chunk !== null) {
+    buffers.push(chunk);
+  }
+});
+
+process.on("SIGINT", () => {
+  console.log(Buffer.concat(buffers));
+  process.exit();
+});
+```
 
