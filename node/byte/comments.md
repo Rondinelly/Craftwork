@@ -117,3 +117,21 @@ process.on("SIGINT", () => {
 });
 ```
 
+## typed arrays
+
+Para trabalhar com dados binários no navegador, existem os _[typed arrays](http://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Typed_arrays)_.
+
+- `Uint8Array`
+
+Representa o formato do _Typed array_ em 8 bits. _Uint_ significa _unsigned_, o que equivale a 
+"apenas inteiros positivos". `Int8Array` por outro lado, pode armazenar valores positivos e negativos.
+
+Todos os dados _input_ transformados em bytes, representados em um `Uint8Array`, após isso, o _output_ 
+em formato JSON.
+
+```js
+process.stdin.once("data", function(buff) {
+  var ui8 = new Uint8Array(buff)
+  process.stdout.write(JSON.stringify(ui8));
+})
+```
