@@ -135,3 +135,26 @@ process.stdin.once("data", function(buff) {
   process.stdout.write(JSON.stringify(ui8));
 })
 ```
+
+## ArrayBuffer
+
+_ArrayBuffer_ está uma camada abaixo de um _Typed Array_, ou seja, todo _Typed Array_ tem um 
+_ArrayBuffer_.  
+
+- A diferença entre `Uint16Array` e `Uint32Array` ?
+
+A diferença é que cada construtor de um Array tem um intervalo de _bytes_ diferente na memória. 
+`Uint8Array` tem apenas 1 _byte_, então o limite de um número é 255. `Uint16Array` tem 2 _bytes_ de 
+comprimento, então o limite é 65535. `Uint32Array` tem 4 _bytes_ de comprimento, então o limite é 
+4294967295.
+
+Ao construir _Uint_ * Array, é declarado o comprimento do array como o primeiro argumento
+
+```js
+let ui32 = new Uint32Array(1);
+let num = Number(10);
+ui32[0] = num;
+let ui16 = new Uint16Array(ui32.buffer);
+console.log(JSON.stringify(ui16));
+// Print: {"0":10,"1":0}
+```
