@@ -7,4 +7,4 @@ function onReject(error){
 	console.log(error.message);
 }
 
-promise.then(null, onReject);
+promise.then(null).catch(onReject);
