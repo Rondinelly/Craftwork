@@ -45,3 +45,23 @@ Registra _callbacks_ para receber o valor eventual de uma promise ou a razão pe
 a promise não pôde ser cumprida. Possui dois parâmetros: o callback `onFulfilled` e 
 `onRejected`, que são opcionais, sendo assim, o método `then` aguarda o retorno de 
 _fulfillment_ ou _rejection_.
+
+## Rejecting a Promise
+
+_Rejected_ pode acontecer explicitamente ou implicitamente, o que significa que houve
+algum erro durante a execução do código. Pode ser usado o objeto `Error` ou `throw` 
+para lançar o erro. 
+
+_Rejected_ pode ser atribuído como segundo argumento.
+
+```js
+promise.then(null, onReject);
+```
+
+Porém não pode ser atribuído os dois argumentos simultaneamente, neste caso, 
+deve ser usado `catch`, que segue a mesma idéia de um bloco `try/catch`, no 
+qual o erro é capturado no `try` e é lançado no `catch`.
+
+```js
+promise.then(console.log).catch(onReject);
+```
