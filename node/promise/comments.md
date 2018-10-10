@@ -65,3 +65,10 @@ qual o erro é capturado no `try` e é lançado no `catch`.
 ```js
 promise.then(console.log).catch(onReject);
 ```
+
+## What happens if we reject and resolve a promise?
+
+Em um `callback` normal, devido a algum erro de lógica, problema com sintaxe ou 
+qualquer outro erro simples, é possível que um mesmo `callback` tenha resultados 
+diferentes. Diferentemente disso, em uma promise, existe apenas um estado final: 
+_fulfilled_ ou _rejected_, não sendo possível alterar o seu estado posteriormente.
