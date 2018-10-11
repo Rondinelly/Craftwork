@@ -1,7 +1,7 @@
-const promise = new Promise((fullfiled, reject) => {
-	fullfiled("PROMISE VALUE");
+const promise = new Promise((fullfill, reject) => {
+	fullfill("PROMISE VALUE");
 })
 
 promise.then(console.log);
 
-console.log('MAIN PROGRAM');
+console.log("MAIN PROGRAM");
