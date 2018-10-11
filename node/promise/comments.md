@@ -72,3 +72,11 @@ Em um `callback` normal, devido a algum erro de lógica, problema com sintaxe ou
 qualquer outro erro simples, é possível que um mesmo `callback` tenha resultados 
 diferentes. Diferentemente disso, em uma promise, existe apenas um estado final: 
 _fulfilled_ ou _rejected_, não sendo possível alterar o seu estado posteriormente.
+
+## Always async
+
+Em um mundo assíncrono, um resultado não é obtido imediatamente. Uma promise não 
+retorna sua função de resolução ou rejeição no mesmo evento em que é criado.
+Isso é importante porque elimina a possibilidade de ordem de execução, tendo 
+resultados indeterminados. Apesar de uma promise ser resolvida de forma síncrona,
+a função fornecida não é executada até o próximo evento.
