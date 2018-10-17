@@ -80,3 +80,15 @@ retorna sua função de resolução ou rejeição no mesmo evento em que é cria
 Isso é importante porque elimina a possibilidade de ordem de execução, tendo 
 resultados indeterminados. Apesar de uma promise ser resolvida de forma síncrona,
 a função fornecida não é executada até o próximo evento.
+
+## Shortcuts
+
+- **Promise.reject(obj)**
+
+Simplifica a criação de uma promise que será rejeitada, sendo preciso um argumento 
+do tipo _Object_.
+
+- **Promise.resolve(obj)**
+
+Abrevia a opção de criar uma nova promise resolvida, o argumento pode ser uma 
+promise e precisa ser um _Object_.
