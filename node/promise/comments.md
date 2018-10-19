@@ -92,3 +92,11 @@ do tipo _Object_.
 
 Abrevia a opção de criar uma nova promise resolvida, o argumento pode ser uma 
 promise e precisa ser um _Object_.
+
+## Promise after promise
+
+A composição de valores no retorno envolvendo promises **aninhadas**, não é uma 
+boa prática, se por exemplo, houver mais de três promises, o código ficará 
+ruim sintaticamente, além da dificuldade para lançar uma exceção entre uma promise
+e outra. Para evitar isso, cada promise deve retornar outra promise separadamente, 
+tornando o encadeamento e as declarações convenientes.
