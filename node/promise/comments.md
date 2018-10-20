@@ -100,3 +100,9 @@ boa prática, se por exemplo, houver mais de três promises, o código ficará
 ruim sintaticamente, além da dificuldade para lançar uma exceção entre uma promise
 e outra. Para evitar isso, cada promise deve retornar outra promise separadamente, 
 tornando o encadeamento e as declarações convenientes.
+
+## Values and promises
+
+A propriedade `then` aponta para promises e valores. Mesmo que valores sejam passados 
+de forma síncrona, o _Handler fulfillment_  é responsável por transformar o retorno 
+de um valor em promise. 
