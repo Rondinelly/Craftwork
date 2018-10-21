@@ -106,3 +106,10 @@ tornando o encadeamento e as declarações convenientes.
 A propriedade `then` aponta para promises e valores. Mesmo que valores sejam passados 
 de forma síncrona, o _Handler fulfillment_  é responsável por transformar o retorno 
 de um valor em promise. 
+
+## Throw an error
+
+Em uma promise os erros não precisam ser manipulados a cada etapa, como em um callback 
+tradicional. Isso resulta em uma promise preenchida de acordo com o resultado da operação, 
+possibiltando o uso de `try/catch`, faz com que um erro seja capturado, mas o código 
+subsequente continue.
