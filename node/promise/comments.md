@@ -68,10 +68,11 @@ promise.then(console.log).catch(onReject);
 
 ## What happens if we reject and resolve a promise?
 
-Em um `callback` normal, devido a algum erro de lógica, problema com sintaxe ou 
-qualquer outro erro simples, é possível que um mesmo `callback` tenha resultados 
-diferentes. Diferentemente disso, em uma promise, existe apenas um estado final: 
-_fulfilled_ ou _rejected_, não sendo possível alterar o seu estado posteriormente.
+Uma promise nunca pode ser resolvida mais de uma vez. Em um `callback` normal, 
+devido a algum erro de lógica, problema com sintaxe ou qualquer outro erro simples, 
+é possível que um mesmo `callback` tenha resultados diferentes. Diferentemente disso, 
+em uma promise, existe apenas um estado final: _fulfilled_ ou _rejected_, não sendo 
+possível alterar o seu estado posteriormente.
 
 ## Always async
 
@@ -103,7 +104,7 @@ tornando o encadeamento e as declarações convenientes.
 
 ## Values and promises
 
-A propriedade `then` aponta para promises e valores. Mesmo que valores sejam passados 
+O método `then` aponta para promises e valores. Mesmo que valores sejam passados 
 de forma síncrona, o _Handler fulfillment_  é responsável por transformar o retorno 
 de um valor em promise. 
 
@@ -111,5 +112,10 @@ de um valor em promise.
 
 Em uma promise os erros não precisam ser manipulados a cada etapa, como em um callback 
 tradicional. Isso resulta em uma promise preenchida de acordo com o resultado da operação, 
-possibiltando o uso de `try/catch`, faz com que um erro seja capturado, mas o código 
-subsequente continue.
+ou seja, se houver um erro a promise será rejeitada, caso contrário será preenchida.
+
+## An important rule
+
+As promises simulam o fluxo de um código síncrono, isso quer dizer que, se lançado um erro 
+entre qualquer posição do encadeamento dessas, o fluxo é interrompido e o código subsequente 
+não será executado.
