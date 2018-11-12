@@ -13,6 +13,14 @@ manipulação de dados.
 - Elemento
 - Props
 
+## Criar Projeto
+
+```
+npx create-react-app nome-do-projeto
+cd nome-do-projeto
+npm start
+```
+
 ## Componente
 
 ```jsx
