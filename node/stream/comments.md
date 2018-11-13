@@ -19,7 +19,16 @@ outra função.
 ## input output
 
 - `process.stdin` é um Readable stream. 
-- `process.stdout`é um Writable stream.
+- `process.stdout` é um Writable stream.
 
+## transform
 
+- [through2](https://www.npmjs.com/package/through2)
 
+ `this.push(chunk)` enfileira os dados a serem adicionados, 
+ pode ser chamado várias vezes, enquanto o callback não for finalizado.
+ `this.push(null)` pode ser acionado quando não houver mais 
+ dados e o callback não for finalizado.
+ 
+ 
+   
