@@ -1,7 +1,8 @@
 # Stream
 
 Stream é uma coleção de dados, como arrays ou strings. 
-A diferença é que um stream decide o quanto irá usar 
+A diferença é que um stream é preechido de forma **incremental**, 
+ou seja, ele define o quanto irá usar 
 de memória, não tendo que usar toda memória disponível.
 O que possibilita trabalhar com grande quantidade de dados,
 visto que ele pode dividir a quantidade de dados por etapas, 
@@ -30,5 +31,13 @@ outra função.
  `this.push(null)` pode ser acionado quando não houver mais 
  dados e o callback não for finalizado.
  
+ ## lines
  
+ - [split](https://www.npmjs.com/package/split)
+ 
+Faz a quebra de um Stream e remonta seu conteúdo por linha.
+
+- [`if(numero % 2)`](https://repl.it/repls/VioletGlitteringModem)
+
+Verifica se um número é ímpar.
    
