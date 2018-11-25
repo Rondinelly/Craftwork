@@ -1,8 +1,8 @@
 # Stream
 
-Stream é uma coleção de dados, como arrays ou strings. 
+Stream tem por resultado uma coleção de dados, como arrays ou strings. 
 A diferença é que um stream é preechido de forma **incremental**, 
-ou seja, ele define o quanto irá usar 
+ou seja, o próprio define o quanto irá usar 
 de memória, não tendo que usar toda memória disponível.
 O que possibilita trabalhar com grande quantidade de dados,
 visto que ele pode dividir a quantidade de dados por etapas, 
@@ -57,12 +57,15 @@ Concatena todo o conteúdo de um stream e retorna em um único Buffer.
 
 ## http server
 
-Stream não é somente para arquivos texto, os objetos `request`
-e `response` da instância `http.Server` do node também são streams.
+Os objetos `request` e `response` da instância `http.Server` do node 
+também são streams.
 
 - `response.end([data][, encoding][, callback])`
 
 Sinaliza o fim de cada resposta do servidor.
 
+## Links
+
+- [stream-handbook](https://github.com/substack/stream-handbook)
 
    
