@@ -37,7 +37,22 @@ outra função.
  
 Faz a quebra de um Stream e remonta seu conteúdo por linha.
 
-- [`if(numero % 2)`](https://repl.it/repls/VioletGlitteringModem)
+- `if(numero % 2)`
 
 Verifica se um número é ímpar.
+
+## concat 
+
+- [concat stream](https://www.npmjs.com/package/concat-stream)
+
+Concatena todo o conteúdo de um stream e retorna em um único Buffer.
+
+**Métodos úteis:**
+
+- [split](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+
+- [reverse](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+
+- [join](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
    
