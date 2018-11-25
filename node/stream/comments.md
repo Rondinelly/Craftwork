@@ -55,4 +55,14 @@ Concatena todo o conteúdo de um stream e retorna em um único Buffer.
 
 - [join](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 
+## http server
+
+Stream não é somente para arquivos texto, os objetos `request`
+e `response` da instância `http.Server` do node também são streams.
+
+- `response.end([data][, encoding][, callback])`
+
+Sinaliza o fim de cada resposta do servidor.
+
+
    
