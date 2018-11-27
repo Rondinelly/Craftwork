@@ -64,8 +64,19 @@ também são streams.
 
 Sinaliza o fim de cada resposta do servidor.
 
+## http client
+
+- Módulo [`request`](https://www.npmjs.com/package/request)
+
+Simplifica as requisições HTTP do lado cliente, tais como 
+`GET`, `POST` e etc. Com o resultado da requisição, ele gera 
+um objeto stream, este pode ser tanto `readable` ou `writable`, 
+ou seja, pode ser lido ou escrito. O módulo `request` também pode
+verificar a extensão de um arquivo passado na requisição, por exemplo,
+se transmitido um arquivo `.json`, ele já preenche o conteúdo do
+`content-type` com `application/json` no cabeçalho da requisição.
+
+
 ## Links
 
 - [stream-handbook](https://github.com/substack/stream-handbook)
-
-   
