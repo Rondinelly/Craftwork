@@ -76,6 +76,22 @@ verificar a extensão de um arquivo passado na requisição, por exemplo,
 se transmitido um arquivo `.json`, ele já preenche o conteúdo do
 `content-type` com `application/json` no cabeçalho da requisição.
 
+## websockets
+
+Um webSocket é uma conexão contínua entre **cliente** e **servidor**. 
+Na Web em tempo real, os usuários recebem novas informações do 
+servidor assim que disponível, ou seja, quando cliente ou servidor 
+criam uma nova informação. Um dos motivos para tornar isso possível, 
+é o não uso de requisições(Protocolos HTTP), o que se traduz 
+para o usuário, em um tráfego de dados imediato, não necessitando 
+atualizar a página. 
+
+- Módulo [websocket-stream](https://www.npmjs.com/package/websocket-stream)
+
+Este módulo é simples, com cerca de 80 linhas de código, ele depende da 
+implementação do websocket fornecido(WebSocket do navegador ou do Node.js).
+
+- `echo.websocket.org` é um servidor webSocket que devolve o conteúdo enviado.
 
 ## Links
 
