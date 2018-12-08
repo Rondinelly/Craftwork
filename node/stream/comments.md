@@ -24,7 +24,7 @@ outra função.
 
 ## transform
 
-- [through2](https://www.npmjs.com/package/through2)
+- Modulo [`through2`](https://www.npmjs.com/package/through2)
 
  `this.push(chunk)` enfileira os dados a serem adicionados, 
  pode ser chamado várias vezes, enquanto o callback não for finalizado.
@@ -33,7 +33,7 @@ outra função.
  
  ## lines
  
- - [split](https://www.npmjs.com/package/split)
+ - Módulo [`split`](https://www.npmjs.com/package/split)
  
 Faz a quebra de um Stream e remonta seu conteúdo por linha.
 
@@ -43,7 +43,7 @@ Verifica se um número é ímpar.
 
 ## concat 
 
-- [concat stream](https://www.npmjs.com/package/concat-stream)
+- Módulo [`concat stream`](https://www.npmjs.com/package/concat-stream)
 
 Concatena todo o conteúdo de um stream e retorna em um único Buffer.
 
@@ -86,12 +86,32 @@ criam uma nova informação. Um dos motivos para tornar isso possível,
 para o usuário, em um tráfego de dados imediato, não necessitando 
 atualizar a página. 
 
-- Módulo [websocket-stream](https://www.npmjs.com/package/websocket-stream)
+- Módulo [`websocket-stream`](https://www.npmjs.com/package/websocket-stream)
 
 Este módulo é simples, com cerca de 80 linhas de código, ele depende da 
 implementação do websocket fornecido(WebSocket do navegador ou do Node.js).
 
 - `echo.websocket.org` é um servidor webSocket que devolve o conteúdo enviado.
+
+## html stream 
+
+- Módulo [`trumpet`](https://www.npmjs.com/package/trumpet)
+
+Transforma um stream a partir de um seletor CSS.
+
+## duplexer
+
+- Módulo[`child_process`](https://nodejs.org/api/child_process.html)(Node.js)
+
+## duplexer-redux
+
+- Módulo [`duplexer2`](https://www.npmjs.com/package/duplexer2)
+
+## combiner
+
+- Módulo [`stream-combiner`](https://www.npmjs.com/package/stream-combiner)
+
+- Módulo [`zlib`](https://www.npmjs.com/package/zlib)
 
 ## Links
 
