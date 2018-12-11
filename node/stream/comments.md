@@ -111,6 +111,11 @@ Transforma um stream a partir de um seletor CSS.
 
 - Módulo [`stream-combiner`](https://www.npmjs.com/package/stream-combiner)
 
+`Combine` permite juntar todos streams em apenas um. Sendo assim,
+ele monta o conteúdo do início do primeiro stream até o final do 
+último stream, fazendo com que qualquer erro eventual, também seja 
+lançado de uma só vez.
+
 - Módulo [`zlib`](https://www.npmjs.com/package/zlib)
 
 ## Links
