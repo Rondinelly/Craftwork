@@ -108,13 +108,13 @@ recuperar um stream com HTML transformado.
 
 - Método `select()`
 
-Retorna um objeto com o conteúdo de `elem` para o primeiro elemento 
+Retorna um objeto com o conteúdo de `elem` pelo primeiro elemento 
 correspondente do `selector`.
 
 - Método `createStream()`
 
-Cria um novo stream que reproduza o conteúdo de `elem` e substitua 
-o conteúdo atual por dados novos.
+Cria um novo stream que reproduz o conteúdo de `elem` e substitui 
+o conteúdo atual por novos dados.
 
 ## duplexer
 
