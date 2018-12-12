@@ -97,7 +97,24 @@ implementação do websocket fornecido(WebSocket do navegador ou do Node.js).
 
 - Módulo [`trumpet`](https://www.npmjs.com/package/trumpet)
 
-Transforma um stream a partir de um seletor CSS.
+Recebe um HTML como entrada e tranforma-o em um stream, tornando possível
+manipular seu conteúdo, após isso, usando as ferramentas do Node podemos 
+transformar esse stream em um documento HTML novamente.
+
+- `let tr = trumpet()`
+
+Cria um _trumpet stream_. Faça o `pipe` de um stream(`tr`) HTML 
+recuperar um stream com HTML transformado.
+
+- Método `select()`
+
+Retorna um objeto com o conteúdo de `elem` para o primeiro elemento 
+correspondente do `selector`.
+
+- Método `createStream()`
+
+Cria um novo stream que reproduza o conteúdo de `elem` e substitua 
+o conteúdo atual por dados novos.
 
 ## duplexer
 
