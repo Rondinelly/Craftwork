@@ -1,6 +1,8 @@
 # learnyounode
 
-## Single Threaded Event Loop Model
+## Hello World
+
+- Single Threaded Event Loop Model
 
 O Node.js foi criado explicitamente como uma experiência no processamento assíncrono. 
 Com a teoria de que o processamento assíncrono em uma única _thread_ fornece mais 
@@ -85,7 +87,10 @@ definido como um método GET, realiza a chamada `req.end()` de modo automático.
 
 ![eventDebug](https://raw.githubusercontent.com/Rondinelly/Craftwork/master/resources/end.PNG)
 
-### handler
+### HTTP COLLECT
+
+- **handler**
+
 - `response.on("data", console.log);` :arrow_lower_right:
 - `response.on("error", console.error);` :arrow_right: objeto _IncomingMessage_. 
 
@@ -131,8 +136,6 @@ requisição, tendo dois objetos:
 Inicia o servidor HTTP, que tem como parâmetro a porta de conexão escolhida.
 
 ![listen](https://raw.githubusercontent.com/Rondinelly/Craftwork/master/resources/Capturar.JPG)
-
-## HTTP FILE SERVER
 
 - `fs.createReadStream(path[, options])`
 
