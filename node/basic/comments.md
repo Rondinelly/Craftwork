@@ -1,30 +1,44 @@
 # learnyounode
 
-## `process.argv`
+## Single Threaded Event Loop Model
+
+O Node.js foi criado explicitamente como uma experiência no processamento assíncrono. 
+Com a teoria de que o processamento assíncrono em uma única _thread_ fornece mais 
+desempenho e escalabilidade sob cargas típicas da Web do que a implementação típica 
+baseada em _multithreading_. Como o Node JS segue essa arquitetura, ele pode lidar 
+com mais e mais solicitações simultâneas com muita facilidade.
+
+## BABY STEPS
+
+- `process.argv`
 
 A propriedade `process.argv` retorna uma matriz de strings contendo os argumentos de um CLI 
 transmitido quando o processo NODE foi iniciado. O primeiro elemento do array `process.argv` é 
 sempre "node" e o segundo elemento é sempre o caminho do arquivo executado, do terceiro em diante
 são passados os argumentos `(process.argv[2])`;
 
-## `fs.readFileSync(path[, options])`
+## MY FIRST I/O!
+
+- `fs.readFileSync(path[, options])`
 
 Faz a leitura de um arquivo de forma síncrona;
 
-## `fs.readFile(path[, options], callback)`
+## MY FIRST ASYNC I/O!
+
+- `fs.readFile(path[, options], callback)`
 
 Faz a leitura de um arquivo de forma assíncrona; o callback tem dois argumentos: `(err, data)`, no
 qual data é o conteúdo do arquivo.
 
-### callback
+- **callback**
 
-Funções em Javascript são objetos, o que significa que eles se comportam como qualquer outro objeto,
- pode ser armazenados em variáveis, serem passados como argumentos ou serem retornados de outras 
+Funções em Javascript são objetos, o que significa que eles se comportam como qualquer outro objeto, 
+pode ser armazenados em variáveis, serem passados como argumentos ou serem retornados de outras 
 funções. Um callback, em si, é apenas uma função passada como um argumento para outra função e, em 
 seguida, executada dentro dela. `callback` é uma função que é chamada por uma função acima. A idéia 
 é deixar a função acima (externa) manipular a execução do callback.
 
-### foreach
+- **foreach**
 
 É um método prototípico de um Array. O método `forEach()` chama uma determinada `function/callback` 
 em cada elemento de uma matriz, de acordo com a ordem do índice.
@@ -41,24 +55,30 @@ O  método `forEach()` usa uma function como argumento. A função consiste em t
 - a variável `index` mantém o índice do valor nessa matriz específica. 
 - a variável `array` mantém o array total passado.
 
-## `fs.readdir(path[, options], callback)`
+## FILTERED LS
+
+- `fs.readdir(path[, options], callback)`
 
 Faz a leitura do diretório (`path`).
 
 - `options`(opcional) para indicar o enconding do arquivo.
 - `callback` contém `err`, `files` é a lista com o nome dos arquivos do diretório.
 
-## `path.extname(path)`
+- **`path.extname(path)`**
 
 Retorna a extensão do arquivo do caminho(path) selecionado.
 
-## `module.exports`
+## MAKE IT MODULAR
+
+- `module.exports`
 
 A palavra-chave `require` retorna um objeto, que faz referência ao valor `module.exports` de um
 determinado arquivo. Cada módulo também é privado(acessível apenas a partir do código do módulo). O 
 Node.js internamente envolve todos os módulos `require` em um wrapper. 
 
-## `http.get(url[, options][, callback])`
+## HTTP CLIENT
+
+- `http.get(url[, options][, callback])`
 
 Retorna uma nova instância de `http.ClientRequest`, semelhante a `http.request()`, porém já
 definido como um método GET, realiza a chamada `req.end()` de modo automático.
@@ -69,13 +89,17 @@ definido como um método GET, realiza a chamada `req.end()` de modo automático.
 - `response.on("data", console.log);` :arrow_lower_right:
 - `response.on("error", console.error);` :arrow_right: objeto _IncomingMessage_. 
 
-## npm -- bl (BufferList)
+## JUGGLING ASYNC
+
+- Módulo [bl](https://www.npmjs.com/package/bl) (BufferList)
 
 Através de um _stream piped_ será realizado a coleta de dados. Ao terminar a stream, um callback 
 vai ser disparado com os dados. O parâmetro `data` resultante do callback é uma concatenação de 
 todos objetos `Buffer` da lista. O objetivo é armazenar todos os dados do buffer ou parte destes.
 
-## `net.createServer([options][, connectionListener])`
+## TIME SERVER
+
+- `net.createServer([options][, connectionListener])`
 
 Cria um servidor TCP ou IPC, sem HTTP. Retorna uma nova instância de `net.Server`. O argumento 
 `connectionListener` é uma função, que é um ouvinte do evento `connection`, que por sua vez é  
@@ -89,7 +113,9 @@ escrever dados para o socket. Possui o evento `socket.end()` que fecha o socket.
 $ telnet localhost --porta
 ```
 
-## `http.createServer([options][, requestListener])`
+## HTTP FILE SERVER
+
+- `http.createServer([options][, requestListener])`
 
 ![createServer](https://raw.githubusercontent.com/Rondinelly/Craftwork/master/resources/http.png)
 
@@ -106,7 +132,9 @@ Inicia o servidor HTTP, que tem como parâmetro a porta de conexão escolhida.
 
 ![listen](https://raw.githubusercontent.com/Rondinelly/Craftwork/master/resources/Capturar.JPG)
 
-## `fs.createReadStream(path[, options])`
+## HTTP FILE SERVER
+
+- `fs.createReadStream(path[, options])`
 
 Retorna uma nova instância de `fs.ReadStream`(objeto Readable Streams). Realiza o stream de 
 arquivos, sendo o primeiro argumento: `path`, o caminho do arquivo.
@@ -116,7 +144,7 @@ arquivos, sendo o primeiro argumento: `path`, o caminho do arquivo.
 `Readable streams` armazenam dados em memória até certo ponto, para ter mais dados disponíveis para 
 leitura quando o stream fica disponível para realizar o mesmo.
 
-## Class: http.IncomingMessage
+- **Class: http.IncomingMessage**
 
 Pode ser usado para visualizar informações da requisição como status e dados.
 
@@ -128,12 +156,14 @@ Campo apenas para leitura, contém o método HTTP da requisição no valor de um
 
 Contém a url da requisição.
 
-## npm -- through2-map
+## HTTP UPPERCASERER
+
+- Módulo [through2-map](https://www.npmjs.com/package/through2-map)
 
 Tem por objetivo funcionar como `Array.prototype.map` em um _stream_, porém seu uso é apenas para 
 modificar dados, não funciona para filtro.
 
-## `url.parse(urlString[, parseQueryString[, slashesDenoteHost]])`
+- `url.parse(urlString[, parseQueryString[, slashesDenoteHost]])`
 
 Transforma uma string em um objeto URL. Um objeto URL contém propriedades com informações dos 
 componentes presentes em uma url.
@@ -141,7 +171,9 @@ componentes presentes em uma url.
 - `parseQueryString` propriedade _boolean_ que se habilitada preenche a propriedade `query` 
 análisada, caso contrário retorna apenas a string.
 
-## Class: http.ServerResponse
+## HTTP JSON API SERVER
+
+- **Class: http.ServerResponse**
 
 Criado internamente pelo servidor HTTP.
 
