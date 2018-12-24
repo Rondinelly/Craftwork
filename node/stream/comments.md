@@ -120,6 +120,16 @@ o conteúdo atual por novos dados.
 
 - Módulo[`child_process`](https://nodejs.org/api/child_process.html)(Node.js)
 
+Permite acessar as funcionalidades do sistema operacional 
+executando qualquer comando do sistema dentro de um processo filho.
+
+- `spawn`
+
+Lança um comando em um novo processo e podemos usá-lo para passar 
+esse comando para qualquer argumento.
+
+O resultado da execução de `spawn` é uma instância de `ChildProcess`.
+
 ## duplexer-redux
 
 - Módulo [`duplexer2`](https://www.npmjs.com/package/duplexer2)
