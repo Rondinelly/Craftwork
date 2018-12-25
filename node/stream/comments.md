@@ -143,8 +143,10 @@ ele monta o conteúdo do início do primeiro stream até o final do
 último stream, fazendo com que qualquer erro eventual, também seja 
 lançado de uma só vez.
 
-- Módulo [`zlib`](https://www.npmjs.com/package/zlib)
+- Módulo [`zlib`](https://nodejs.org/dist/latest/docs/api/zlib.html#zlib_zlib)(Node.js)
 
+Compacta e descompacta arquivos.
+ 
 ## Links
 
 - [stream-handbook](https://github.com/substack/stream-handbook)
