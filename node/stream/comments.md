@@ -134,6 +134,9 @@ O resultado da execução de `spawn` é uma instância de `ChildProcess`.
 
 - Módulo [`duplexer2`](https://www.npmjs.com/package/duplexer2)
 
+Cria um duplex stream, ou seja, fornece um caminho bidirecional para 
+os dados serem manipulados do começo ao fim.
+
 ## combiner
 
 - Módulo [`stream-combiner`](https://www.npmjs.com/package/stream-combiner)
