@@ -1,6 +1,7 @@
 # Electron
 
-- baseado no Node.js e Chromium.
+É uma biblioteca composta pelo Chromium e Node.js para desenvolver 
+aplicativos desktop usando HTML, CSS e JavaScript.
 
 ## install
 
