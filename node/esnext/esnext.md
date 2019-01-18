@@ -11,7 +11,7 @@ método `next()`.
 
 - `next()` tem as seguintes propriedades internas:
  - `value` -- Contador.
- - `done`-- Retorna `false` quando a lista termina.
+ - `done`-- Retorna `true` quando a lista termina.
 
 Com um _iterator_ pode se fazer um loop em uma coleção:
 
