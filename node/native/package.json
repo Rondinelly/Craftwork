@@ -1,7 +1,7 @@
 {
-  "name": "myaddon",
+  "name": "addon",
   "version": "0.0.0",
-  "description": "My Addon",
+  "description": "Addon",
   "main": "index.js",
   "scripts": {
     "install": "node-gyp rebuild"
