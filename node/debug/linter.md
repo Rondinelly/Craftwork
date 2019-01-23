@@ -1,10 +1,10 @@
-## Install `jshint`
+## Instalar `jshint`
 
 ```
 npm install -g jshint
 ```
 
-## Config file for `jshint`
+## Configurar o arquivo `jshint`
 
 ```json
 {
@@ -12,23 +12,21 @@ npm install -g jshint
     "undef": true
 }
 ```
-* Put it in a file named **.jshintrc**
+- Grave em um arquivo **.jshintrc**
 
-## Run `jshint` with
+## Executar `jshint`
 
 ```
 jshint --config .jshintrc <filename.js>
 ```
 
-### or
-
-## Install `eslint`
+## Instalar `eslint`
 
 ```
 npm -g i eslint
 ```
 
-## Config file for `eslint`
+## Configurar o arquivo `eslint`
 
 ```json
 {
@@ -41,9 +39,9 @@ npm -g i eslint
 }
 ```
 
-* Put it in a file named **.eslintrc**
+- Grave em um arquivo **.eslintrc**
 
-## Run `eslint` with
+## Executar `eslint`
 
 ```
 eslint --config .eslintrc <filename.js>
