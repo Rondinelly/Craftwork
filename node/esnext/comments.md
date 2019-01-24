@@ -29,3 +29,17 @@ O que torna um iterador especial é como ele percorre uma
 coleção. Outros loops precisam carregar a coleção inteira 
 para depois iterar sobre ela, enquanto um _iterador_ só 
 precisa saber a posição atual na coleção. 
+
+## Built-In Iterators
+
+- `forEach()` método protótipo de um Array, semelhante a 
+um `for` tradicional.
+- `for..in` loop sobre as propriedades enumeráveis do 
+próprio objeto.
+- `for...of` faz
+
+
+
+## Links 
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
