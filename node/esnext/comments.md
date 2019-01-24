@@ -34,11 +34,14 @@ precisa saber a posição atual na coleção.
 
 - `forEach()` método protótipo de um Array, semelhante a 
 um `for` tradicional.
-- `for..in` loop sobre as propriedades enumeráveis do 
-próprio objeto.
-- `for...of` faz
+- `for...in` é um loop sobre as propriedades enumeráveis do 
+próprio objeto iterável, em ordem arbitrária.
+- `for...of` é um loop sobre as propriedades enumeráveis do 
+próprio objeto iterável, na ordem da inserção original.
 
-
+A diferença de `for...of` para `for...in`, está na forma de 
+percorrer uma lista ou objeto, `for...in` percorre uma lista 
+por índice, por outro lado `for...of` percorre por valores.
 
 ## Links 
 
