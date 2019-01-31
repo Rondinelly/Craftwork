@@ -43,6 +43,12 @@ A diferença de `for...of` para `for...in`, está na forma de
 percorrer uma lista ou objeto, `for...in` percorre uma lista 
 por índice, por outro lado `for...of` percorre por valores.
 
+## Advanced Iterables 
+
+Um _iterator_ pode percorrer uma sequência infinita de valores,
+Com isso, a propriedade `done` do método `next()` nunca retornará 
+`true`.
+
 ## Links 
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
