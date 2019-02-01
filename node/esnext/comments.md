@@ -46,9 +46,19 @@ por índice, por outro lado `for...of` percorre por valores.
 ## Advanced Iterables 
 
 Um _iterator_ pode percorrer uma sequência infinita de valores,
-Com isso, a propriedade `done` do método `next()` nunca retornará 
-`true`.
+com isso, a propriedade `done` do método `next()` nunca irá 
+retornar `true`.
 
-## Links 
+## Introduction to generators
 
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
+Um _generator_ é identificado pela expressão `function*`, 
+ele basicamente cria um `iterator` internamente.
+
+A função _generator_ não executa todas as instruções 
+imediatamente, a cada expressão `yield`, a função retorna
+um objeto `iterator`, mantendo o que já foi executado dentro 
+da função, gravado em memória.
+
+## Links MDN
+
+- [Generator](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/function*)
