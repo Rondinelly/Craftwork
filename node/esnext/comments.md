@@ -61,9 +61,9 @@ da função, gravado em memória.
 
 ## Passing Args To Yield
 
-Um gerador aceita argumentos, podendo ser atribuído no método 
-`next()`, esse argumento será atribuído ao declarar a expressão 
-`yield`.
+Um gerador aceita argumentos, podendo este ser atribuído no 
+método `next()`, esse argumento será atribuído dentro da função 
+_generator_ ao declarar a expressão `yield`.
 
 ## Links MDN
 
