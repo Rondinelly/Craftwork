@@ -59,6 +59,13 @@ imediatamente, a cada expressão `yield`, a função retorna
 um objeto `iterator`, mantendo o que já foi executado dentro 
 da função, gravado em memória.
 
+## Passing Args To Yield
+
+Um gerador aceita argumentos, podendo ser atribuído no método 
+`next()`, esse argumento será atribuído ao declarar a expressão 
+`yield`.
+
 ## Links MDN
 
+- [Iterator](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Iteration_protocols)
 - [Generator](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/function*)
