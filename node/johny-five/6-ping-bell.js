@@ -8,7 +8,7 @@ board.on("ready", () => {
 
   server.on("message", () => {
     piezo.play({
-      song: 'C D F D A',
+      song: "C D F D A",
       beats: 1 / 4,
       tempo: 100
     });
