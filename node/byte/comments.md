@@ -119,7 +119,7 @@ process.on("SIGINT", () => {
 
 ## typed arrays
 
-Para trabalhar com dados binários no navegador, existem os _[typed arrays](http://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Typed_arrays)_.
+Para trabalhar com dados binários no navegador, existem os _typed arrays_.
 
 - `Uint8Array`
 
