@@ -49,11 +49,11 @@ Concatena todo o conteúdo de um stream e retorna em um único Buffer.
 
 **Métodos úteis:**
 
-- [split](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- split
 
-- [reverse](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+- reverse
 
-- [join](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- join
 
 ## http server
 
