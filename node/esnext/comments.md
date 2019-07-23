@@ -64,8 +64,3 @@ da função, gravado em memória.
 Um gerador aceita argumentos, podendo este ser atribuído no 
 método `next()`, esse argumento será atribuído dentro da função 
 _generator_ ao declarar a expressão `yield`.
-
-## Links MDN
-
-- [Iterator](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Iteration_protocols)
-- [Generator](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/function*)
